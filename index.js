@@ -3,13 +3,13 @@
   const player1 = document.getElementById('player-1');
 
   /* 1a. */
-  const player2 = '?';
+  const player2 = document.getElementById('player-2');
 
   /* 1b. */
-  const resultArea = '?';
+  const resultArea = document.getElementById('result-area');
 
   /* 1c. */
-  const playBtn = '?';
+  const playBtn = document.getElementById('play-btn');
 
   /* This will help check your results */
   console.log(player2, resultArea, playBtn);
@@ -32,15 +32,15 @@
   const decideWinner = (a, b) => {
     if ((a === '✊' && b === '✊') || (a === '🤚' && b === '🤚') || (a === '✌️' && b === '✌️')) {
 
-      /* 3a. */ return "?";
+      /* 3a. */ return "Equality !";
 
     } else if ((a === '✊' && b === '✌️') || (a === '🤚' && b === '✊') || (a === '✌️' && b === '🤚')) {
 
-      /* 3b. */ return "?";
+      /* 3b. */ return "Player 1 wins ! ";
 
     } else {
 
-      /* 3c. */ return "?";
+      /* 3c. */ return "Player 2 wins !";
 
     }
   };
@@ -49,6 +49,7 @@
     let choice1 = generateChoice();
     let choice2 = generateChoice();
     let result = decideWinner(choice1, choice2);
+    console.log(result);
 
     insertHTML(choice1, choice2, result);
   };
@@ -58,5 +59,8 @@
 /* --- EVENT LISTENERS --- */
 
   /* 2. */
+
+  playBtn.addEventListener('click',play);
+
 
 /* ------------------------------- */
